@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C63D4EF913E20BD900417B58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63D4EF813E20BD900417B58 /* UIKit.framework */; };
+		C63D4EFB13E20BD900417B58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63D4EFA13E20BD900417B58 /* Foundation.framework */; };
+		C63D4EFD13E20BD900417B58 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63D4EFC13E20BD900417B58 /* CoreGraphics.framework */; };
+		C63D4EFF13E20BD900417B58 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63D4EFE13E20BD900417B58 /* CoreData.framework */; };
+		C63D4F0513E20BD900417B58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C63D4F0313E20BD900417B58 /* InfoPlist.strings */; };
+		C63D4F0713E20BD900417B58 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C63D4F0613E20BD900417B58 /* main.m */; };
+		C63D4F0B13E20BD900417B58 /* CDPokemonBrowserAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C63D4F0A13E20BD900417B58 /* CDPokemonBrowserAppDelegate.m */; };
+		C63D4F0E13E20BD900417B58 /* CDPokemonBrowser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C63D4F0C13E20BD900417B58 /* CDPokemonBrowser.xcdatamodeld */; };
+		C63D4F1213E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = C63D4F1113E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPhone.m */; };
+		C63D4F1513E20BD900417B58 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C63D4F1313E20BD900417B58 /* MainWindow_iPhone.xib */; };
+		C63D4F1913E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = C63D4F1813E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPad.m */; };
+		C63D4F1C13E20BD900417B58 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C63D4F1A13E20BD900417B58 /* MainWindow_iPad.xib */; };
+		C64447DD13E213F9005C9AF0 /* 357Tropius.png in Resources */ = {isa = PBXBuildFile; fileRef = C64447D813E213F9005C9AF0 /* 357Tropius.png */; };
+		C64447DE13E213F9005C9AF0 /* 467Magmortar.png in Resources */ = {isa = PBXBuildFile; fileRef = C64447D913E213F9005C9AF0 /* 467Magmortar.png */; };
+		C64447DF13E213F9005C9AF0 /* 623Golurk.png in Resources */ = {isa = PBXBuildFile; fileRef = C64447DA13E213F9005C9AF0 /* 623Golurk.png */; };
+		C64447E013E213F9005C9AF0 /* pokeBall.png in Resources */ = {isa = PBXBuildFile; fileRef = C64447DB13E213F9005C9AF0 /* pokeBall.png */; };
+		C64447E113E213F9005C9AF0 /* pokemonMap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C64447DC13E213F9005C9AF0 /* pokemonMap.jpg */; };
+		C64447E513E2160C005C9AF0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64447E413E2160C005C9AF0 /* RootViewController.m */; };
+		C64447E713E2161A005C9AF0 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64447E613E2161A005C9AF0 /* RootViewController.xib */; };
+		C64447EF13E21763005C9AF0 /* PBGolurk.m in Sources */ = {isa = PBXBuildFile; fileRef = C64447EA13E21763005C9AF0 /* PBGolurk.m */; };
+		C64447F013E21763005C9AF0 /* PBMagmortar.m in Sources */ = {isa = PBXBuildFile; fileRef = C64447EC13E21763005C9AF0 /* PBMagmortar.m */; };
+		C64447F113E21763005C9AF0 /* PBTropius.m in Sources */ = {isa = PBXBuildFile; fileRef = C64447EE13E21763005C9AF0 /* PBTropius.m */; };
+		C67647D913E3EAB700A64AA8 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = C67647D813E3EAB700A64AA8 /* README.markdown */; };
+		C68B524013E399F500C917A5 /* PBPokemonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C68B523E13E399F500C917A5 /* PBPokemonDetail.m */; };
+		C68B524113E399F500C917A5 /* PBPokemonDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = C68B523F13E399F500C917A5 /* PBPokemonDetail.xib */; };
+		C68B524613E3A2D900C917A5 /* PBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68B524313E3A2D800C917A5 /* PBMapViewController.m */; };
+		C68B524713E3A2D900C917A5 /* PBMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C68B524413E3A2D900C917A5 /* PBMapViewController.xib */; };
+		C68B524813E3A2D900C917A5 /* PBPokemonDetail-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C68B524513E3A2D900C917A5 /* PBPokemonDetail-iPad.xib */; };
+		C68B525213E3BB1500C917A5 /* PBTrainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68B525013E3BB1500C917A5 /* PBTrainerViewController.m */; };
+		C68B525313E3BB1500C917A5 /* PBTrainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C68B525113E3BB1500C917A5 /* PBTrainerViewController.xib */; };
+		C6A3797913E218AF00E41D20 /* PBManagedPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3797813E218AF00E41D20 /* PBManagedPokemon.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C63D4EF413E20BD900417B58 /* CDPokemonBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDPokemonBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C63D4EF813E20BD900417B58 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C63D4EFA13E20BD900417B58 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C63D4EFC13E20BD900417B58 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C63D4EFE13E20BD900417B58 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C63D4F0213E20BD900417B58 /* CDPokemonBrowser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CDPokemonBrowser-Info.plist"; sourceTree = "<group>"; };
+		C63D4F0413E20BD900417B58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C63D4F0613E20BD900417B58 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C63D4F0813E20BD900417B58 /* CDPokemonBrowser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CDPokemonBrowser-Prefix.pch"; sourceTree = "<group>"; };
+		C63D4F0913E20BD900417B58 /* CDPokemonBrowserAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDPokemonBrowserAppDelegate.h; sourceTree = "<group>"; };
+		C63D4F0A13E20BD900417B58 /* CDPokemonBrowserAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDPokemonBrowserAppDelegate.m; sourceTree = "<group>"; };
+		C63D4F0D13E20BD900417B58 /* CDPokemonBrowser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDPokemonBrowser.xcdatamodel; sourceTree = "<group>"; };
+		C63D4F1013E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CDPokemonBrowserAppDelegate_iPhone.h; path = iPhone/CDPokemonBrowserAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		C63D4F1113E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CDPokemonBrowserAppDelegate_iPhone.m; path = iPhone/CDPokemonBrowserAppDelegate_iPhone.m; sourceTree = "<group>"; };
+		C63D4F1413E20BD900417B58 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		C63D4F1713E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CDPokemonBrowserAppDelegate_iPad.h; path = iPad/CDPokemonBrowserAppDelegate_iPad.h; sourceTree = "<group>"; };
+		C63D4F1813E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CDPokemonBrowserAppDelegate_iPad.m; path = iPad/CDPokemonBrowserAppDelegate_iPad.m; sourceTree = "<group>"; };
+		C63D4F1B13E20BD900417B58 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+		C64447D813E213F9005C9AF0 /* 357Tropius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 357Tropius.png; sourceTree = "<group>"; };
+		C64447D913E213F9005C9AF0 /* 467Magmortar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 467Magmortar.png; sourceTree = "<group>"; };
+		C64447DA13E213F9005C9AF0 /* 623Golurk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 623Golurk.png; sourceTree = "<group>"; };
+		C64447DB13E213F9005C9AF0 /* pokeBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokeBall.png; sourceTree = "<group>"; };
+		C64447DC13E213F9005C9AF0 /* pokemonMap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pokemonMap.jpg; sourceTree = "<group>"; };
+		C64447E313E2160C005C9AF0 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		C64447E413E2160C005C9AF0 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		C64447E613E2161A005C9AF0 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		C64447E913E21763005C9AF0 /* PBGolurk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBGolurk.h; sourceTree = "<group>"; };
+		C64447EA13E21763005C9AF0 /* PBGolurk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBGolurk.m; sourceTree = "<group>"; };
+		C64447EB13E21763005C9AF0 /* PBMagmortar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBMagmortar.h; sourceTree = "<group>"; };
+		C64447EC13E21763005C9AF0 /* PBMagmortar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBMagmortar.m; sourceTree = "<group>"; };
+		C64447ED13E21763005C9AF0 /* PBTropius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBTropius.h; sourceTree = "<group>"; };
+		C64447EE13E21763005C9AF0 /* PBTropius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBTropius.m; sourceTree = "<group>"; };
+		C67647D813E3EAB700A64AA8 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		C68B523D13E399F500C917A5 /* PBPokemonDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPokemonDetail.h; sourceTree = "<group>"; };
+		C68B523E13E399F500C917A5 /* PBPokemonDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPokemonDetail.m; sourceTree = "<group>"; };
+		C68B523F13E399F500C917A5 /* PBPokemonDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBPokemonDetail.xib; sourceTree = "<group>"; };
+		C68B524213E3A2D800C917A5 /* PBMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBMapViewController.h; sourceTree = "<group>"; };
+		C68B524313E3A2D800C917A5 /* PBMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBMapViewController.m; sourceTree = "<group>"; };
+		C68B524413E3A2D900C917A5 /* PBMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBMapViewController.xib; sourceTree = "<group>"; };
+		C68B524513E3A2D900C917A5 /* PBPokemonDetail-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PBPokemonDetail-iPad.xib"; sourceTree = "<group>"; };
+		C68B524F13E3BB1500C917A5 /* PBTrainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBTrainerViewController.h; sourceTree = "<group>"; };
+		C68B525013E3BB1500C917A5 /* PBTrainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBTrainerViewController.m; sourceTree = "<group>"; };
+		C68B525113E3BB1500C917A5 /* PBTrainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBTrainerViewController.xib; sourceTree = "<group>"; };
+		C6A3797713E218AF00E41D20 /* PBManagedPokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBManagedPokemon.h; sourceTree = "<group>"; };
+		C6A3797813E218AF00E41D20 /* PBManagedPokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBManagedPokemon.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C63D4EF113E20BD900417B58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C63D4EF913E20BD900417B58 /* UIKit.framework in Frameworks */,
+				C63D4EFB13E20BD900417B58 /* Foundation.framework in Frameworks */,
+				C63D4EFD13E20BD900417B58 /* CoreGraphics.framework in Frameworks */,
+				C63D4EFF13E20BD900417B58 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C63D4EE913E20BD900417B58 = {
+			isa = PBXGroup;
+			children = (
+				C67647D813E3EAB700A64AA8 /* README.markdown */,
+				C63D4F2213E20E1500417B58 /* Resources */,
+				C63D4F0013E20BD900417B58 /* CDPokemonBrowser */,
+				C63D4EF713E20BD900417B58 /* Frameworks */,
+				C63D4EF513E20BD900417B58 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C63D4EF513E20BD900417B58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C63D4EF413E20BD900417B58 /* CDPokemonBrowser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C63D4EF713E20BD900417B58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C63D4EF813E20BD900417B58 /* UIKit.framework */,
+				C63D4EFA13E20BD900417B58 /* Foundation.framework */,
+				C63D4EFC13E20BD900417B58 /* CoreGraphics.framework */,
+				C63D4EFE13E20BD900417B58 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C63D4F0013E20BD900417B58 /* CDPokemonBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C68B524F13E3BB1500C917A5 /* PBTrainerViewController.h */,
+				C68B525013E3BB1500C917A5 /* PBTrainerViewController.m */,
+				C68B525113E3BB1500C917A5 /* PBTrainerViewController.xib */,
+				C68B524213E3A2D800C917A5 /* PBMapViewController.h */,
+				C68B524313E3A2D800C917A5 /* PBMapViewController.m */,
+				C68B524413E3A2D900C917A5 /* PBMapViewController.xib */,
+				C68B523D13E399F500C917A5 /* PBPokemonDetail.h */,
+				C68B523E13E399F500C917A5 /* PBPokemonDetail.m */,
+				C68B523F13E399F500C917A5 /* PBPokemonDetail.xib */,
+				C68B524513E3A2D900C917A5 /* PBPokemonDetail-iPad.xib */,
+				C64447E813E2167C005C9AF0 /* Pokemon */,
+				C64447E313E2160C005C9AF0 /* RootViewController.h */,
+				C64447E413E2160C005C9AF0 /* RootViewController.m */,
+				C64447E613E2161A005C9AF0 /* RootViewController.xib */,
+				C63D4F0913E20BD900417B58 /* CDPokemonBrowserAppDelegate.h */,
+				C63D4F0A13E20BD900417B58 /* CDPokemonBrowserAppDelegate.m */,
+				C63D4F0C13E20BD900417B58 /* CDPokemonBrowser.xcdatamodeld */,
+				C63D4F0F13E20BD900417B58 /* iPhone */,
+				C63D4F1613E20BD900417B58 /* iPad */,
+				C63D4F0113E20BD900417B58 /* Supporting Files */,
+			);
+			path = CDPokemonBrowser;
+			sourceTree = "<group>";
+		};
+		C63D4F0113E20BD900417B58 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C63D4F0213E20BD900417B58 /* CDPokemonBrowser-Info.plist */,
+				C63D4F0313E20BD900417B58 /* InfoPlist.strings */,
+				C63D4F0613E20BD900417B58 /* main.m */,
+				C63D4F0813E20BD900417B58 /* CDPokemonBrowser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C63D4F0F13E20BD900417B58 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				C63D4F1013E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPhone.h */,
+				C63D4F1113E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPhone.m */,
+				C63D4F1313E20BD900417B58 /* MainWindow_iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		C63D4F1613E20BD900417B58 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				C63D4F1713E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPad.h */,
+				C63D4F1813E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPad.m */,
+				C63D4F1A13E20BD900417B58 /* MainWindow_iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		C63D4F2213E20E1500417B58 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C64447D813E213F9005C9AF0 /* 357Tropius.png */,
+				C64447D913E213F9005C9AF0 /* 467Magmortar.png */,
+				C64447DA13E213F9005C9AF0 /* 623Golurk.png */,
+				C64447DB13E213F9005C9AF0 /* pokeBall.png */,
+				C64447DC13E213F9005C9AF0 /* pokemonMap.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C64447E813E2167C005C9AF0 /* Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				C6A3797713E218AF00E41D20 /* PBManagedPokemon.h */,
+				C6A3797813E218AF00E41D20 /* PBManagedPokemon.m */,
+				C64447E913E21763005C9AF0 /* PBGolurk.h */,
+				C64447EA13E21763005C9AF0 /* PBGolurk.m */,
+				C64447EB13E21763005C9AF0 /* PBMagmortar.h */,
+				C64447EC13E21763005C9AF0 /* PBMagmortar.m */,
+				C64447ED13E21763005C9AF0 /* PBTropius.h */,
+				C64447EE13E21763005C9AF0 /* PBTropius.m */,
+			);
+			name = Pokemon;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C63D4EF313E20BD900417B58 /* CDPokemonBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C63D4F1F13E20BD900417B58 /* Build configuration list for PBXNativeTarget "CDPokemonBrowser" */;
+			buildPhases = (
+				C63D4EF013E20BD900417B58 /* Sources */,
+				C63D4EF113E20BD900417B58 /* Frameworks */,
+				C63D4EF213E20BD900417B58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CDPokemonBrowser;
+			productName = CDPokemonBrowser;
+			productReference = C63D4EF413E20BD900417B58 /* CDPokemonBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C63D4EEB13E20BD900417B58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "UW Milwaukee";
+			};
+			buildConfigurationList = C63D4EEE13E20BD900417B58 /* Build configuration list for PBXProject "CDPokemonBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C63D4EE913E20BD900417B58;
+			productRefGroup = C63D4EF513E20BD900417B58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C63D4EF313E20BD900417B58 /* CDPokemonBrowser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C63D4EF213E20BD900417B58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C63D4F0513E20BD900417B58 /* InfoPlist.strings in Resources */,
+				C63D4F1513E20BD900417B58 /* MainWindow_iPhone.xib in Resources */,
+				C63D4F1C13E20BD900417B58 /* MainWindow_iPad.xib in Resources */,
+				C64447DD13E213F9005C9AF0 /* 357Tropius.png in Resources */,
+				C64447DE13E213F9005C9AF0 /* 467Magmortar.png in Resources */,
+				C64447DF13E213F9005C9AF0 /* 623Golurk.png in Resources */,
+				C64447E013E213F9005C9AF0 /* pokeBall.png in Resources */,
+				C64447E113E213F9005C9AF0 /* pokemonMap.jpg in Resources */,
+				C64447E713E2161A005C9AF0 /* RootViewController.xib in Resources */,
+				C68B524113E399F500C917A5 /* PBPokemonDetail.xib in Resources */,
+				C68B524713E3A2D900C917A5 /* PBMapViewController.xib in Resources */,
+				C68B524813E3A2D900C917A5 /* PBPokemonDetail-iPad.xib in Resources */,
+				C68B525313E3BB1500C917A5 /* PBTrainerViewController.xib in Resources */,
+				C67647D913E3EAB700A64AA8 /* README.markdown in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C63D4EF013E20BD900417B58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C63D4F0713E20BD900417B58 /* main.m in Sources */,
+				C63D4F0B13E20BD900417B58 /* CDPokemonBrowserAppDelegate.m in Sources */,
+				C63D4F0E13E20BD900417B58 /* CDPokemonBrowser.xcdatamodeld in Sources */,
+				C63D4F1213E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPhone.m in Sources */,
+				C63D4F1913E20BD900417B58 /* CDPokemonBrowserAppDelegate_iPad.m in Sources */,
+				C64447E513E2160C005C9AF0 /* RootViewController.m in Sources */,
+				C64447EF13E21763005C9AF0 /* PBGolurk.m in Sources */,
+				C64447F013E21763005C9AF0 /* PBMagmortar.m in Sources */,
+				C64447F113E21763005C9AF0 /* PBTropius.m in Sources */,
+				C6A3797913E218AF00E41D20 /* PBManagedPokemon.m in Sources */,
+				C68B524013E399F500C917A5 /* PBPokemonDetail.m in Sources */,
+				C68B524613E3A2D900C917A5 /* PBMapViewController.m in Sources */,
+				C68B525213E3BB1500C917A5 /* PBTrainerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C63D4F0313E20BD900417B58 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C63D4F0413E20BD900417B58 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C63D4F1313E20BD900417B58 /* MainWindow_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C63D4F1413E20BD900417B58 /* en */,
+			);
+			name = MainWindow_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		C63D4F1A13E20BD900417B58 /* MainWindow_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C63D4F1B13E20BD900417B58 /* en */,
+			);
+			name = MainWindow_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C63D4F1D13E20BD900417B58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C63D4F1E13E20BD900417B58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C63D4F2013E20BD900417B58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CDPokemonBrowser/CDPokemonBrowser-Prefix.pch";
+				INFOPLIST_FILE = "CDPokemonBrowser/CDPokemonBrowser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C63D4F2113E20BD900417B58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CDPokemonBrowser/CDPokemonBrowser-Prefix.pch";
+				INFOPLIST_FILE = "CDPokemonBrowser/CDPokemonBrowser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C63D4EEE13E20BD900417B58 /* Build configuration list for PBXProject "CDPokemonBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C63D4F1D13E20BD900417B58 /* Debug */,
+				C63D4F1E13E20BD900417B58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C63D4F1F13E20BD900417B58 /* Build configuration list for PBXNativeTarget "CDPokemonBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C63D4F2013E20BD900417B58 /* Debug */,
+				C63D4F2113E20BD900417B58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C63D4F0C13E20BD900417B58 /* CDPokemonBrowser.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C63D4F0D13E20BD900417B58 /* CDPokemonBrowser.xcdatamodel */,
+			);
+			currentVersion = C63D4F0D13E20BD900417B58 /* CDPokemonBrowser.xcdatamodel */;
+			path = CDPokemonBrowser.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C63D4EEB13E20BD900417B58 /* Project object */;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="11A511" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Pokemon" representedClassName="PBManagedPokemon">
+        <attribute name="currentHP" optional="YES" attributeType="Integer 16" defaultValueString="100"/>
+        <attribute name="imageName" optional="YES" attributeType="String" defaultValueString="pokeball"/>
+        <attribute name="maxHP" optional="YES" attributeType="Integer 16" defaultValueString="100"/>
+        <attribute name="nickname" optional="YES" attributeType="String"/>
+        <attribute name="speciesName" optional="YES" attributeType="String" defaultValueString="A Pokemon"/>
+    </entity>
+    <elements>
+        <element name="Pokemon" positionX="160" positionY="192" width="128" height="120"/>
+    </elements>
+</model>
