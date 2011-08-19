@@ -49,7 +49,16 @@
 }
 
 // inside PBPokemonDetail.m
-- (void)setPokemon:(PBManagedPokemon *)pokemon
+//- (void)setPokemon:(PBManagedPokemon *)pokemon
+//{
+//    [_myPokemon release];
+//    [pokemon retain];
+//    _myPokemon = pokemon;
+//    
+//    [self reloadPokemon];
+//}
+#warning legacy
+- (void)setPokemon:(NSManagedObject *)pokemon
 {
     [_myPokemon release];
     [pokemon retain];
@@ -57,7 +66,6 @@
     
     [self reloadPokemon];
 }
-
 #pragma mark - split view delegate
 
 - (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
@@ -78,8 +86,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    self.title = _myPokemon.speciesName;
+#warning legacy
+//    self.title = _myPokemon.speciesName;
+    self.title = [_myPokemon valueForKey:@"speciesName"];
     [self reloadPokemon];    
 }
 
@@ -110,24 +119,38 @@
 }
 
 - (void)updateInterface {
-    _HPLabel.text = [NSString stringWithFormat:@"HP: %i/%i", [_myPokemon.currentHP intValue], [_myPokemon.maxHP intValue]];
-    float currentHP = [_myPokemon.currentHP floatValue];
-    float maxHP = [_myPokemon.maxHP floatValue];
-    float percentHPRemaining =  currentHP/maxHP;
+//    _HPLabel.text = [NSString stringWithFormat:@"HP: %i/%i", [_myPokemon.currentHP intValue], [_myPokemon.maxHP intValue]];
+//    float currentHP = [_myPokemon.currentHP floatValue];
+//    float maxHP = [_myPokemon.maxHP floatValue];
+#warning legacy
+    _HPLabel.text = [NSString stringWithFormat:@"HP: %i/%i", [[_myPokemon valueForKey:@"currentHP"] intValue], [[_myPokemon valueForKey:@"maxHP"] intValue]];
+    float currentHP = [[_myPokemon valueForKey:@"currentHP"] floatValue];
+    float maxHP = [[_myPokemon valueForKey:@"maxHP"] floatValue];
     
+    float percentHPRemaining =  currentHP/maxHP;
+
     _HPBar.progress = percentHPRemaining;
 }
 
 - (void)reloadPokemon;
 {
-    _imageView.image = _myPokemon.image;
-    _speciesLabel.text = _myPokemon.speciesName;
-    _nicknameLabel.text = _myPokemon.nickname;
+//    _imageView.image = _myPokemon.image;
+//    _speciesLabel.text = _myPokemon.speciesName;
+//    _nicknameLabel.text = _myPokemon.nickname;
+#warning legacy
+    _imageView.image = [UIImage imageNamed:[_myPokemon valueForKey:@"imageName"]];
+    _speciesLabel.text = [_myPokemon valueForKey:@"speciesName"];
     [self updateInterface];
+
 }
 
 - (IBAction)btnHit:(id)sender {
-    [_myPokemon takeDamage:10];
+//    [_myPokemon takeDamage:10];
+#warning legacy
+    int oldHP = [[_myPokemon valueForKey:@"currentHP"] intValue];
+    int newHP = oldHP - 10;
+    [_myPokemon setValue:[NSNumber numberWithInt:newHP] forKey:@"currentHP"];
+    
     [self updateInterface];
     
     NSError *error = nil;
@@ -136,7 +159,9 @@
 }
 
 - (IBAction)btnHeal:(id)sender {
-    [_myPokemon fullyHeal];
+//    [_myPokemon fullyHeal];
+#warning  legacy
+    [_myPokemon setValue:[_myPokemon valueForKey:@"maxHP"] forKey:@"currentHP"];
     [self updateInterface];
     
     NSError *error = nil;

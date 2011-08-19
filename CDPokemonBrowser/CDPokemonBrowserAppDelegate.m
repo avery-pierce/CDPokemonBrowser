@@ -12,6 +12,7 @@
 #import "PBGolurk.h"
 #import "PBMagmortar.h"
 
+// (placed above @implementation CDPokemonBrowserAppDelegate, but below the #import statements)
 // A debugging flag to dump the DB every time the app launches
 static BOOL DUMP_DB_AT_LAUCH = NO;
 
@@ -25,6 +26,59 @@ static BOOL DUMP_DB_AT_LAUCH = NO;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults boolForKey:@"alreadySetup"])
+    {
+        
+        // fill the DB with some starting data 
+        NSLog(@"filling with initial data");
+        /*
+        // Generate an entity description for our pokemon
+        NSEntityDescription *pokemonEntity = [NSEntityDescription entityForName:@"Pokemon" inManagedObjectContext:self.managedObjectContext];
+        
+        // Initialize some pokemon, and insert them into the appropriate object contexts.
+        PBTropius *myTropius = [[PBTropius alloc] initWithEntity:pokemonEntity insertIntoManagedObjectContext:self.managedObjectContext];
+        PBMagmortar *myMagmortar = [[PBMagmortar alloc] initWithEntity:pokemonEntity insertIntoManagedObjectContext:self.managedObjectContext];
+        PBGolurk *myGolurk = [[PBGolurk alloc] initWithEntity:pokemonEntity insertIntoManagedObjectContext:self.managedObjectContext];
+        
+        NSError *error = nil;
+        [self.managedObjectContext save:&error];
+        if (error) NSLog(@"A save error occurred: %@", error);
+        
+        // release memory.
+        [myTropius release];
+        [myMagmortar release];
+        [myGolurk release];
+         */
+        
+        // Get a reference to the managed object context
+        NSEntityDescription *pokemon = [NSEntityDescription entityForName:@"Pokemon" inManagedObjectContext:self.managedObjectContext];
+        
+        // insert the objects into the database
+        NSManagedObject *myTropius = [[NSManagedObject alloc] initWithEntity:pokemon insertIntoManagedObjectContext:self.managedObjectContext];
+        NSManagedObject *myGolurk = [[NSManagedObject alloc] initWithEntity:pokemon insertIntoManagedObjectContext:self.managedObjectContext];
+        NSManagedObject *myMagmortar = [[NSManagedObject alloc] initWithEntity:pokemon insertIntoManagedObjectContext:self.managedObjectContext];
+        
+        [myTropius setValue:@"357Tropius" forKey:@"imageName"];
+        [myTropius setValue:@"Tropius" forKey:@"speciesName"];
+        [myGolurk setValue:@"623Golurk" forKey:@"imageName"];
+        [myGolurk setValue:@"Golrurk" forKey:@"speciesName"];
+        [myMagmortar setValue:@"467Magmortar" forKey:@"imageName"];
+        [myMagmortar setValue:@"Magmortar" forKey:@"speciesName"];
+        
+        // Save these managed objects to the database
+        NSError *error = nil;
+        [self.managedObjectContext save:&error];
+        if (error) NSLog(@"Error saving state: %@", error);
+        
+        // Balance the memory
+        [myTropius release];
+        [myGolurk release];
+        [myMagmortar release];
+        
+        // set the user defaults to YES so this never runs again
+        [userDefaults setBool:YES forKey:@"alreadySetup"];
+    }
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -145,7 +199,7 @@ static BOOL DUMP_DB_AT_LAUCH = NO;
  */
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
     
     if (__persistentStoreCoordinator != nil)
     {
@@ -156,9 +210,12 @@ static BOOL DUMP_DB_AT_LAUCH = NO;
     
     // Dump the db if we're debugging
     if (DUMP_DB_AT_LAUCH) {
+        NSLog(@"Dumping DB");
         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil];
+        
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults removeObjectForKey:@"alreadySetup"];
-    }    
+    }
     
     NSError *error = nil;
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
@@ -189,32 +246,6 @@ static BOOL DUMP_DB_AT_LAUCH = NO;
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
-    }    
-    
-    if (![userDefaults boolForKey:@"alreadySetup"])
-    {
-        // fill the DB with some starting data 
-        NSLog(@"filling with initial data");
-        
-        // Generate an entity description for our pokemon
-        NSEntityDescription *pokemonEntity = [NSEntityDescription entityForName:@"Pokemon" inManagedObjectContext:self.managedObjectContext];
-        
-        // Initialize some pokemon, and insert them into the appropriate object contexts.
-        PBTropius *myTropius = [[PBTropius alloc] initWithEntity:pokemonEntity insertIntoManagedObjectContext:self.managedObjectContext];
-        PBMagmortar *myMagmortar = [[PBMagmortar alloc] initWithEntity:pokemonEntity insertIntoManagedObjectContext:self.managedObjectContext];
-        PBGolurk *myGolurk = [[PBGolurk alloc] initWithEntity:pokemonEntity insertIntoManagedObjectContext:self.managedObjectContext];
-        
-        NSError *error = nil;
-        [self.managedObjectContext save:&error];
-        if (error) NSLog(@"A save error occurred: %@", error);
-        
-        // release memory.
-        [myTropius release];
-        [myMagmortar release];
-        [myGolurk release];
-        
-        // set the user defaults to NO so this never runs again
-        [userDefaults setBool:YES forKey:@"alreadySetup"];
     }
     
     

@@ -27,14 +27,51 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Pokemon";
     
     // Get a reference to the managed object context
     _managedObjectContext = [(CDPokemonBrowserAppDelegate *)[UIApplication sharedApplication].delegate managedObjectContext];
+    [_managedObjectContext retain];
+    NSEntityDescription *pokemon = [NSEntityDescription entityForName:@"Pokemon" inManagedObjectContext:_managedObjectContext];
+//    
+//    // insert the objects into the database
+//    NSManagedObject *myTropius = [[NSManagedObject alloc] initWithEntity:pokemon insertIntoManagedObjectContext:_managedObjectContext];
+//    NSManagedObject *myGolurk = [[NSManagedObject alloc] initWithEntity:pokemon insertIntoManagedObjectContext:_managedObjectContext];
+//    NSManagedObject *myMagmortar = [[NSManagedObject alloc] initWithEntity:pokemon insertIntoManagedObjectContext:_managedObjectContext];
+//    
+//    [myTropius setValue:@"357Tropius" forKey:@"imageName"];
+//    [myTropius setValue:@"Tropius" forKey:@"speciesName"];
+//    [myGolurk setValue:@"623Golurk" forKey:@"imageName"];
+//    [myGolurk setValue:@"Golrurk" forKey:@"speciesName"];
+//    [myMagmortar setValue:@"467Magmortar" forKey:@"imageName"];
+//    [myMagmortar setValue:@"Magmortar" forKey:@"speciesName"];
+//    
+//    // Save these managed objects to the database
+    NSError *error = nil;
+//    [_managedObjectContext save:&error];
+//    if (error) NSLog(@"Error saving state: %@", error);
+//    
+//    // Balance the memory
+//    [myTropius release];
+//    [myGolurk release];
+//    [myMagmortar release];
+    
+    // fetch the data from the database, and store it as an instance variable for later use.
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    fetch.entity = pokemon;
+    fetch.fetchBatchSize = 50;
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"imageName" ascending:YES];
+    fetch.sortDescriptors = [NSArray arrayWithObject:sort];
+    
+    _pokemonArray = [_managedObjectContext executeFetchRequest:fetch error:&error];
+    [_pokemonArray retain];
+    if (error) NSLog(@"Error fetching data: %@", error);
+    
+    [fetch release];
     
     // fetch the pokemon and put them into the array
-    _pokemonArray = [[NSArray alloc] initWithArray:[self fetchPokemon]];
-    
-    self.title = @"Pokemon";
+#warning uncomment this line for final build
+//    _pokemonArray = [self fetchPokemon];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -109,17 +146,19 @@
     }
     
     // Configure the cell.
-    NSArray *results = _pokemonArray;    
+//    NSArray *results = _pokemonArray;    
     
     // Get a reference to the pokemon we need
-    PBManagedPokemon *myPokemon = [results objectAtIndex:indexPath.row];
+    NSManagedObject *myPokemon = [_pokemonArray objectAtIndex:indexPath.row];
     
     // Update the cell image with the pokemon's image
-    cell.imageView.image = myPokemon.image;
+    cell.imageView.image = [UIImage imageNamed:[myPokemon valueForKey:@"imageName"]];
     
     // Set the text label
-    cell.textLabel.text = myPokemon.speciesName;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"HP: %i/%i", [myPokemon.currentHP intValue], [myPokemon.maxHP intValue]];
+    cell.textLabel.text = [myPokemon valueForKey:@"speciesName"];
+    int currentHP = [[myPokemon valueForKey:@"currentHP"] intValue];
+    int maxHP = [[myPokemon valueForKey:@"maxHP"] intValue];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"HP: %i/%i", currentHP, maxHP];
     
     // set accessory
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -170,10 +209,33 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    /*
     // We want the pokemon no matter what
-    NSArray *pokemonArray = _pokemonArray;
-    PBManagedPokemon *myPokemon = [pokemonArray objectAtIndex:indexPath.row];
+    PBManagedPokemon *myPokemon = [_pokemonArray objectAtIndex:indexPath.row];
 
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        PBPokemonDetail *detailViewController = [[PBPokemonDetail alloc] initWithNibName:@"PBPokemonDetail" bundle:nil];
+        detailViewController.managedObjectContext = _managedObjectContext;
+        
+        detailViewController.pokemon = myPokemon;
+        
+        // Pass the selected object to the new view controller.
+        [self.navigationController pushViewController:detailViewController animated:YES];
+        [detailViewController release];
+    }
+    else
+    {
+        // detail viewController
+        PBPokemonDetail *detail= (PBPokemonDetail *)[self.splitViewController.viewControllers objectAtIndex:1];
+        detail.managedObjectContext = _managedObjectContext;
+        detail.pokemon = myPokemon;
+    }
+    */
+    
+    // We want the pokemon no matter what
+    NSManagedObject *myPokemon = [_pokemonArray objectAtIndex:indexPath.row];
+    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
         PBPokemonDetail *detailViewController = [[PBPokemonDetail alloc] initWithNibName:@"PBPokemonDetail" bundle:nil];
@@ -234,6 +296,7 @@
 {
     // balance the _pokemon memory.
     [_pokemonArray release];
+    [_managedObjectContext release];
     [super dealloc];
 }
 

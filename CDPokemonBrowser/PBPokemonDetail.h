@@ -11,7 +11,8 @@
 @class PBManagedPokemon;
 
 @interface PBPokemonDetail : UIViewController <UISplitViewControllerDelegate, UIPopoverControllerDelegate> {
-    PBManagedPokemon *_myPokemon;
+//    PBManagedPokemon *_myPokemon;
+    NSManagedObject *_myPokemon;
     NSManagedObjectContext *_managedObjectContext;
     
     IBOutlet UIImageView *_imageView;
@@ -22,8 +23,9 @@
     IBOutlet UIToolbar *_toolbar;
 }
 // PBPokemonDetail.h
-@property (nonatomic, retain) PBManagedPokemon *pokemon;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+//@property (nonatomic, retain) PBManagedPokemon *pokemon;
+@property (nonatomic, retain) NSManagedObject *pokemon;
+@property (retain) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)btnHit:(id)sender;
 - (IBAction)btnHeal:(id)sender;
